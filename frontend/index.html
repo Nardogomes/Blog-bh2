@@ -13,12 +13,26 @@
       <h1>Blog BH2</h1>
     </header>
     <nav>
-      <a class="adicionar" href="#">+ Adicionar um Post</a>
+      <a class="adicionar" onclick="Modal.open()" href="#">+ Adicionar um Post</a>
       <a class="excluir" href="#">Excluir um post</a>
     </nav>
     <main>
       <div class="cards"></div>
     </main>
+    <div class="modal-overlay">
+      <div class="modal">
+        <div id="form">
+          <h2>Novo Post</h2>
+          <form action="">
+            <input type="text">
+            <div class="input-group actions">
+              <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+              <button>Salvar</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

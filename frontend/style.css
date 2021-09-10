@@ -76,3 +76,31 @@ main .cards .card img {
 main .cards .card span {
   margin-bottom: 10px;
 }
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.6);
+  
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: #F0F2F5;
+  padding: 2.4rem;
+}

@@ -19,6 +19,7 @@ function show(posts) {
       <img src="${post.imgUrl}" alt="imagem do post"/>
       <span>Autor: ${post.nome}</span>
       <hr>
+      <h2>${post.titulo}</h2>
       <p>${post.mensagem}</p>
     `
     let novoCard = document.createElement('div');
@@ -32,4 +33,16 @@ function show(posts) {
     output = '';
   }
 }
-  
+
+const Modal = {
+  open(){
+      document.querySelector('.modal-overlay')
+      .classList
+      .add('active')
+  },
+  close(){
+      document.querySelector('.modal-overlay')
+      .classList
+      .remove('active')
+  }
+}
