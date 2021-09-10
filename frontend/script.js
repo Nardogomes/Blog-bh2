@@ -16,14 +16,20 @@ function show(posts) {
 
   for(let post of posts) {
     output += `
-      <li>
-        <p>${post.nome}</p>
-        <p>${post.mensagem}</p>
-        <img src="${post.imgUrl}" alt="imagem do post"/>
-      </li>
+      <img src="${post.imgUrl}" alt="imagem do post"/>
+      <span>Autor: ${post.nome}</span>
+      <hr>
+      <p>${post.mensagem}</p>
     `
-  }
+    let novoCard = document.createElement('div');
+    let novoButton = document.createElement('button');
+  
+    novoCard.classList.add('card');
+    novoCard.innerHTML = output;
+  
+    document.querySelector('.cards').appendChild(novoCard);
 
-  document.querySelector('.cards').innerHTML = output;
+    output = '';
+  }
 }
   
