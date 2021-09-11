@@ -14,7 +14,7 @@
     </header>
     <nav>
       <a class="adicionar" onclick="Modal.open()" href="#">+ Adicionar um Post</a>
-      <a class="excluir" href="#">Excluir um post</a>
+      <a class="excluir" onclick="modalDelete.open()" href="#">Excluir um post</a>
     </nav>
     <main>
       <div class="cards"></div>
@@ -23,16 +23,48 @@
       <div class="modal">
         <div id="form">
           <h2>Novo Post</h2>
-          <form action="">
-            <input type="text">
-            <div class="input-group actions">
+
+          <form class="form-modal" action="">
+            <label for="nomeAutor">Nome do Autor</label>
+            <input type="text" id="nomeAutor" name="nomeAutor">
+
+            <label for="tituloPost">Título do Post</label>
+            <input type="text" id="tituloPost" name="tituloPost">
+
+            <label for="imageUrl">URL da Imagem</label>
+            <input type="url" name="imageUrl" id="imageUrl" placeholder="http://">
+
+            <label for="post">Post:</label>
+            <textarea name="post" id="post" cols="30" rows="10"></textarea>
+
+            <div class="button-actions">
               <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
               <button>Salvar</button>
-          </div>
+            </div>
           </form>
         </div>
       </div>
     </div>
+
+    <div class="modalDelete-overlay">
+      <div class="modal">
+        <div id="form">
+          <h2>Excluir um Post</h2>
+
+          <form class="form-modal" action="">
+
+            <label for="tituloPost">Informe o título do Post</label>
+            <input type="text" id="tituloPost" name="tituloPost">
+
+            <div class="button-actions">
+              <a href="#" class="button cancel" onclick="modalDelete.close()">Cancelar</a>
+              <button>Excluir</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
