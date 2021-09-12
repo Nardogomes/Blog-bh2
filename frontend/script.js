@@ -1,12 +1,11 @@
 async function getData() {
   try {
-    const response = await fetch('http://localhost:3000/');
+    const response = await fetch("http://localhost:3000/");
     const data = await response.json();
 
     {
-      data.length != 0 ? show() : showEmpty()
+      data.length != 0 ? show(data) : showEmpty();
     }
-
   } catch (error) {
     console.error(error);
   }
@@ -15,9 +14,9 @@ async function getData() {
 getData();
 
 function show(posts) {
-  let output = '';
+  let output = "";
 
-  for(let post of posts) {
+  for (let post of posts) {
     output += `
       <img src="${post.imgUrl}" alt="imagem do post"/>
       <span>Autor: ${post.nome}</span>
@@ -26,13 +25,13 @@ function show(posts) {
       <p>${post.mensagem}</p>
     `;
 
-    let novoCard = document.createElement('div');
-    novoCard.classList.add('card');
+    let novoCard = document.createElement("div");
+    novoCard.classList.add("card");
     novoCard.innerHTML = output;
-  
-    document.querySelector('.cards').appendChild(novoCard);
 
-    output = '';
+    document.querySelector(".cards").appendChild(novoCard);
+
+    output = "";
   }
 }
 
@@ -42,35 +41,27 @@ function showEmpty() {
     <p>Caso queira adicionar um novo post clique no botão "Adicionar um post"</p>
   `;
 
-  let novaDiv = document.createElement('div');
-  novaDiv.classList.add('card-empty');
+  let novaDiv = document.createElement("div");
+  novaDiv.classList.add("card-empty");
   novaDiv.innerHTML = output;
 
-  document.querySelector('.cards').appendChild(novaDiv);
+  document.querySelector(".cards").appendChild(novaDiv);
 }
 
 const Modal = {
-  open(){
-      document.querySelector('.modal-overlay')
-      .classList
-      .add('active')
+  open() {
+    document.querySelector(".modal-overlay").classList.add("active");
   },
-  close(){
-      document.querySelector('.modal-overlay')
-      .classList
-      .remove('active')
-  }
-}
+  close() {
+    document.querySelector(".modal-overlay").classList.remove("active");
+  },
+};
 
 const modalDelete = {
-  open(){
-      document.querySelector('.modalDelete-overlay')
-      .classList
-      .add('active')
+  open() {
+    document.querySelector(".modalDelete-overlay").classList.add("active");
   },
-  close(){
-      document.querySelector('.modalDelete-overlay')
-      .classList
-      .remove('active')
-  }
-}
+  close() {
+    document.querySelector(".modalDelete-overlay").classList.remove("active");
+  },
+};
