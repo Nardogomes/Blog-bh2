@@ -1,8 +1,4 @@
-const cors = require("cors");
-const express = require("express");
-const server = express();
-
-server.use(cors());
+import app from './app';
 
 const postagens = [
   // {
@@ -27,8 +23,4 @@ const postagens = [
   // },
 ];
 
-server.get("/", (req, res) => {
-  return res.json(postagens);
-});
-
-server.listen(3000, () => console.log("Server runnig..."));
+app.listen(3000, () => console.log("Server runnig..."));
