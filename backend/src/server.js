@@ -23,4 +23,4 @@ const postagens = [
   // },
 ];
 
-app.listen(3000, () => console.log('Server runnig...'));
+app.listen(3000);
